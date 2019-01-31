@@ -1,4 +1,5 @@
 const { resolve, join, parse } = require('path')
+// 搜索目录下所有文件
 const globby = require('globby')
 
 module.exports = app => {
@@ -13,9 +14,11 @@ module.exports = app => {
   Object.keys(fileAbsolutePath).forEach(v => {
     const path = fileAbsolutePath[v]
     const prop = v // 挂载到 ctx 上面的 key
+    // 返回一个存放文件名的数组
     const files = globby.sync("**/*.js", {
       cwd: path
     })
+
     if (prop !== 'middleware') {
       context[prop] = {} // 初始化对象
     }
@@ -28,7 +31,7 @@ module.exports = app => {
       if (prop === 'middleware') {
         if (filename in context['config']) {
           const plugin = content(context['config'][filename])
-          app.use(plugin)
+          app.use(plugin) // 加载中间件
         }
         return
       }
