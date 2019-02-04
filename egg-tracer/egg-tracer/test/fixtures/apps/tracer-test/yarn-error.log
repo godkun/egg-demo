@@ -1,0 +1,37 @@
+Arguments: 
+  /usr/local/bin/node /usr/local/Cellar/yarn/1.12.3/libexec/bin/yarn.js install
+
+PATH: 
+  /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+
+Yarn version: 
+  1.12.3
+
+Node version: 
+  10.13.0
+
+Platform: 
+  darwin x64
+
+Trace: 
+  Error: ENOENT: no such file or directory, copyfile '/Users/godkun/Library/Caches/Yarn/v4/npm-ms-2.0.0-5608aeadfc00be6c2901df5f9861788de0d597c8/node_modules/ms/package.json' -> '/Users/godkun/Documents/kun/zhishi/2019-projects/egg-demo/egg-tracer/egg-tracer/test/fixtures/apps/tracer-test/node_modules/egg/node_modules/egg-logger/node_modules/ms/package.json'
+
+npm manifest: 
+  {
+    "name": "tracer-test",
+    "version": "0.0.1",
+    "dependencies": {
+      "egg": "^2.3.0",
+      "egg-bin": "^4.3.7",
+      "egg-tracer": "file:../../../.."
+    },
+    "scripts": {
+      "start": "egg-bin dev"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
